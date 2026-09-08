@@ -1,7 +1,7 @@
-import { site, telHref } from "@/lib/site";
+import { site, telHref} from "@/lib/site";
 import { LegalPageWrapper, LegalSection, TocSection } from "@/components/legal/LegalLayout";
 
-export const metadata = { title: `Accessibility | ${site.entityName}` };
+export const metadata = { title: "Accessibility" };
 
 const SECTIONS: TocSection[] = [
   { id: "commitment", title: "Our Commitment" },

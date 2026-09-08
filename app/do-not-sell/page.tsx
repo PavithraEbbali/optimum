@@ -1,8 +1,8 @@
-import { site, telHref } from "@/lib/site";
+import { site, telHref} from "@/lib/site";
 import { LegalPageWrapper, LegalSection, TocSection } from "@/components/legal/LegalLayout";
 
 export const metadata = {
-  title: `Do Not Sell or Share My Personal Information | ${site.entityName}`,
+  title: "Do Not Sell or Share My Personal Information",
 };
 
 const SECTIONS: TocSection[] = [

@@ -1,7 +1,7 @@
-import { site, retailerDisclosure, trademarkLine } from "@/lib/site";
+import { site, retailerDisclosure, trademarkLine} from "@/lib/site";
 import { LegalPageWrapper, LegalSection, TocSection } from "@/components/legal/LegalLayout";
 
-export const metadata = { title: `Trademarks | ${site.entityName}` };
+export const metadata = { title: "Trademarks" };
 
 const SECTIONS: TocSection[] = [
   { id: "attribution", title: "Trademark Attribution" },

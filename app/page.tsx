@@ -13,11 +13,11 @@ import WhyOrderThroughUs from "@/components/sections/WhyOrderThroughUs";
 import HowItWorks from "@/components/sections/HowItWorks";
 import FAQSection from "@/components/sections/FAQSection";
 
-import { site } from "@/lib/site";
+import { site, brandName } from "@/lib/site";
 import { faqJsonLd } from "@/lib/jsonLd";
 
 export const metadata: Metadata = {
-  title: `Optimum® Internet, TV, Mobile & Home Phone — Authorized Retailer | ${site.entityName}`,
+  title: `Optimum® Internet, TV, Mobile & Home Phone — ${brandName}`,
   description:
     "Independent authorized retailer of Optimum® services. Optimum 100% Fiber Internet from $40/mo with Auto Pay, plus cable internet, TV, Optimum Mobile and Home Phone. Call to confirm availability and pricing for your address.",
   alternates: { canonical: "/" },

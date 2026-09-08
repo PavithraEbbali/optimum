@@ -1,8 +1,8 @@
 import { ImageResponse } from "next/og";
-import { site } from "@/lib/site";
+import { site, brandName } from "@/lib/site";
 
 export const runtime = "edge";
-export const alt = `${site.entityName} — Independent Authorized ${site.carrier} Retailer`;
+export const alt = `${brandName} — independent authorized retailer of ${site.carrier} services`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -68,7 +68,7 @@ export default function Image() {
             color: "rgba(255,255,255,0.72)",
           }}
         >
-          {site.entityName} — Not {site.carrier}.
+          Independent Authorized Retailer — Not {site.carrier}.
         </div>
       </div>
     ),

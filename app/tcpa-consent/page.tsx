@@ -1,7 +1,7 @@
-import { site, telHref, retailerDisclosure, trademarkLine, pricingDisclaimer } from "@/lib/site";
+import { site, telHref, retailerDisclosure, trademarkLine, pricingDisclaimer} from "@/lib/site";
 import { LegalPageWrapper, TableOfContents, LegalSection, TocSection } from "@/components/legal/LegalLayout";
 
-export const metadata = { title: `TCPA Consent | ${site.entityName}` };
+export const metadata = { title: "TCPA Consent" };
 
 const SECTIONS: TocSection[] = [
   { id: "tcpa-notice",        title: "TCPA Notice" },

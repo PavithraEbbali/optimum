@@ -1,7 +1,7 @@
-import { site, telHref, retailerDisclosure, trademarkLine, pricingDisclaimer } from "@/lib/site";
+import { site, telHref, retailerDisclosure, trademarkLine, pricingDisclaimer} from "@/lib/site";
 import { LegalPageWrapper, TableOfContents, LegalSection, TocSection } from "@/components/legal/LegalLayout";
 
-export const metadata = { title: `Privacy Policy | ${site.entityName}` };
+export const metadata = { title: "Privacy Policy" };
 
 const SECTIONS: TocSection[] = [
   { id: "information-we-collect",     title: "Information We Collect" },

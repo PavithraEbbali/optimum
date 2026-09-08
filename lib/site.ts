@@ -47,6 +47,15 @@ export const site = {
 } as const;
 
 /** Canonical tel: href — every call CTA on the page derives from this. */
+/**
+ * Public-facing brand shown in titles, social cards and the footer lockup.
+ * Optimum is the dominant word; "Authorized Retailer" is locked to it so the
+ * site never presents itself AS Optimum (§7.1). Distinct from site.entityName,
+ * which is the operator's legal identity and appears only where a real party
+ * must be named: disclosures, copyright, TCPA and the legal pages.
+ */
+export const brandName = `${site.carrier} Authorized Retailer`;
+
 export const telHref = `tel:${site.phoneE164}`;
 
 // ── Approved disclosure strings ─────────────────────────────────────────────

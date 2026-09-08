@@ -8,7 +8,7 @@ import Footer from "@/components/layout/Footer";
 import StickyCallBar from "@/components/layout/StickyCallBar";
 import CookieConsent from "@/components/ui/CookieConsent";
 
-import { site } from "@/lib/site";
+import { site, brandName } from "@/lib/site";
 import { organizationJsonLd, productOffersJsonLd } from "@/lib/jsonLd";
 
 const dmSans = DM_Sans({
@@ -28,8 +28,8 @@ const hankenGrotesk = Hanken_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(site.siteUrl),
   title: {
-    default: `${site.entityName} — Authorized ${site.carrier}® Retailer`,
-    template: `%s | ${site.entityName}`,
+    default: `${site.carrier}® Internet, TV, Mobile & Home Phone — ${brandName}`,
+    template: `%s | ${brandName}`,
   },
   description:
     "Independent authorized retailer of Optimum® services. Order Optimum Fiber and cable internet, TV, Optimum Mobile and Home Phone by phone — availability and pricing confirmed for your exact address.",
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: site.siteUrl,
-    siteName: site.entityName,
-    title: `${site.entityName} — Authorized ${site.carrier}® Retailer`,
+    siteName: brandName,
+    title: `${site.carrier}® Internet, TV, Mobile & Home Phone — ${brandName}`,
     description:
       "Independent authorized retailer of Optimum® services. Internet, TV, Mobile and Home Phone — call to confirm availability and pricing for your address.",
   },

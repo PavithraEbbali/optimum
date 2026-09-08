@@ -1,7 +1,7 @@
-import { site, telHref, retailerDisclosure } from "@/lib/site";
+import { site, telHref, retailerDisclosure} from "@/lib/site";
 import { LegalPageWrapper, LegalSection, TocSection } from "@/components/legal/LegalLayout";
 
-export const metadata = { title: `Contact | ${site.entityName}` };
+export const metadata = { title: "Contact" };
 
 const SECTIONS: TocSection[] = [
   { id: "order-line", title: "New Orders" },

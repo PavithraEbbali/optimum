@@ -25,11 +25,14 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr]">
           {/* Operator identity */}
           <div>
-            <p className="font-display text-lg font-extrabold tracking-tight text-optimum-blue">
-              {site.wordmark}
+            {/* Brand lockup, matching the header: the carrier name is dominant
+                but never shown alone — "Authorized Retailer" is locked to it. */}
+            <p className="font-display text-xl font-extrabold leading-none tracking-tight text-optimum-blue">
+              {site.carrier}
+              <sup className="ml-0.5 align-super text-[10px] font-bold">®</sup>
             </p>
-            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.11em] text-slate-500">
-              Independent Authorized {site.carrier}® Retailer
+            <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.13em] text-optimum-orange">
+              Authorized Retailer
             </p>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-600">
               {retailerDisclosure}
