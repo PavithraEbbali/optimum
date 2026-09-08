@@ -1,0 +1,363 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Official Optimum brand tokens.
+   Optimum Blue #0B41CD · Optimum Orange #FA4616 (CTAs only)
+   Surfaces #FFFFFF / #F8FAFC · Ink #0F172A
+   ───────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --op-blue: #0B41CD;
+  --op-deep: #0733A6;
+  --op-accent: #2F6BFF;
+  --op-orange: #FA4616;
+  --op-orange-deep: #D83A0F;
+  --op-surface: #ffffff;
+  --op-surface-soft: #f8fafc;
+  --op-ink: #0f172a;
+  --op-ink-muted: #1e293b;
+  --op-border: #e2e8f0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Anchor jumps clear the top bar + sticky header */
+    scroll-padding-top: 7.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white text-ink antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* §4 — NORMAL CURSORS ONLY.
+     No custom cursor follower, dot or spotlight anywhere on the page. */
+  body,
+  * {
+    cursor: auto;
+  }
+  a,
+  button,
+  summary,
+  [role="button"],
+  label[for],
+  select {
+    cursor: pointer;
+  }
+  input,
+  textarea {
+    cursor: text;
+  }
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  ::selection {
+    background-color: rgba(11, 65, 205, 0.18);
+  }
+
+  section[id] {
+    scroll-margin-top: 7.5rem;
+  }
+
+  :where(input, textarea, select) {
+    accent-color: var(--op-blue);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--op-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl;
+  }
+
+  /* ── Buttons ────────────────────────────────────────────────────────────── */
+
+  /* Optimum Orange is reserved for call-to-action buttons. */
+  .btn-call {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-xl bg-optimum-orange px-6 py-3.5
+           font-semibold text-white shadow-sm transition-colors duration-200
+           hover:bg-optimum-orange-deep focus-visible:outline-2;
+  }
+
+  .btn-call-lg {
+    @apply inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-optimum-orange px-7 py-5
+           text-lg font-bold text-white shadow-md transition-colors duration-200
+           hover:bg-optimum-orange-deep sm:w-auto sm:text-xl;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white
+           px-5 py-3 font-semibold text-ink transition-colors duration-200
+           hover:border-optimum-blue hover:text-optimum-blue;
+  }
+
+  /* ── Cards & sections ───────────────────────────────────────────────────── */
+
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_1px_2px_rgba(15,23,42,0.04)];
+  }
+
+  .card-soft {
+    @apply rounded-2xl border border-slate-200 bg-surface-soft p-6;
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .section-eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.14em] text-optimum-blue;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl;
+  }
+
+  .section-sub {
+    @apply mt-3 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white
+           px-3.5 py-1.5 text-xs font-semibold text-ink-muted;
+  }
+
+  .fine {
+    @apply text-xs leading-relaxed text-slate-500;
+  }
+
+  /* ── §3 CANONICAL PRICE LOCKUP ──────────────────────────────────────────────
+     One baseline flex row. The integer is visually dominant; the cents and the
+     "/mo" label sit on the SAME baseline as the integer — no vertical-align
+     super hacks, no disconnected labels, no negative-margin tricks. */
+
+  .lockup {
+    @apply flex flex-col gap-1;
+  }
+
+  .lockup__row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.075em;
+    color: var(--op-ink);
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+
+  .lockup__cur {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--op-blue);
+  }
+
+  .lockup__int {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--op-blue);
+  }
+
+  @media (min-width: 640px) {
+    .lockup__int {
+      font-size: 3.25rem;
+    }
+  }
+
+  .lockup__cents {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--op-blue);
+  }
+
+  .lockup__per {
+    margin-left: 0.15em;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #475569;
+  }
+
+  .lockup__qual {
+    @apply text-sm font-medium leading-snug text-ink-muted;
+  }
+
+  .lockup__step {
+    @apply text-xs leading-snug text-slate-500;
+  }
+
+  .lockup__fine {
+    @apply text-xs leading-snug;
+  }
+
+  .lockup__fine a {
+    @apply font-medium text-optimum-blue underline underline-offset-2 hover:text-optimum-accent;
+  }
+
+  /* Hero variant — larger, on light background */
+  .lockup--hero .lockup__int {
+    font-size: 3.5rem;
+  }
+  .lockup--hero .lockup__cur,
+  .lockup--hero .lockup__cents {
+    font-size: 1.75rem;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   §4 MINIMAL PURPOSEFUL MOTION
+   One-shot entrance transitions only (opacity + translate, ≤400ms), driven by
+   an IntersectionObserver that adds `.is-visible` exactly once. No GSAP, no
+   Lenis, no tilt/glare, no mouse parallax, no infinite shimmer loops.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Visible by default: the hidden start state is armed by <Reveal> only once JS
+   has hydrated, so content is never hidden by CSS alone. */
+.reveal {
+  transition:
+    opacity 400ms ease-out,
+    transform 400ms ease-out;
+}
+
+.reveal[data-armed="true"] {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.reveal[data-armed="true"].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Reduced motion: honor it strictly (§4) ──────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal[data-armed="true"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SECTION BACKGROUNDS
+   Desktop: the photograph covers the whole section.
+   Mobile:  it does NOT. A 16:9 photo behind a 375x2700 section is scaled ~12x
+            to cover, leaving an unrecognisable blur. Below 768px the image is
+            instead a fixed-height band at the top of the section that fades
+            into the section colour, so it stays recognisable at a sane crop.
+   `--bg-tone` is the section's own surface colour, set per instance.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.section-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.section-bg__img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section-bg__scrim {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(var(--bg-tone) / 0.88) 0%,
+    rgb(var(--bg-tone) / 0.86) 20%,
+    rgb(var(--bg-tone) / 0.52) 48%,
+    rgb(var(--bg-tone) / 0.48) 78%,
+    rgb(var(--bg-tone) / 0.66) 100%
+  );
+}
+
+@media (max-width: 767px) {
+  .section-bg {
+    inset: 0 0 auto 0;
+    height: 420px;
+  }
+  .section-bg__scrim {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(var(--bg-tone) / 0.86) 0%,
+      rgb(var(--bg-tone) / 0.74) 40%,
+      rgb(var(--bg-tone) / 0.94) 84%,
+      rgb(var(--bg-tone) / 1) 100%
+    );
+  }
+}
+
+/* Hero backdrop — same reasoning, tuned for the hero's own proportions. */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .hero-bg {
+    inset: 0 0 auto 0;
+    height: 460px;
+  }
+  .hero-scrim {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.82) 0%,
+      rgba(255, 255, 255, 0.72) 38%,
+      rgba(255, 255, 255, 0.94) 78%,
+      rgba(255, 255, 255, 1) 100%
+    ) !important;
+  }
+}
+
+/* Minimum 24x24 CSS px touch target (WCAG 2.5.8) for small inline links. */
+@media (max-width: 767px) {
+  .lockup__fine a,
+  .tap-target {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+  }
+}

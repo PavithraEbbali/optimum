@@ -1,0 +1,35 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# production
+/build
+
+# original full-resolution source artwork (~196MB).
+# The optimised .webp files under public/images/ are what the site serves.
+/assets-source
+
+# local dev logs
+*.log
+dev-out.txt
+dev-err.txt
+dev-err.log
+dev.log
+
+# env
+.env
+.env*.local
+
+# vercel
+.vercel
+
+# os / editor
+.DS_Store
+Thumbs.db
