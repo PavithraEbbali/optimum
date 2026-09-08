@@ -17,15 +17,15 @@
 export const site = {
   // ── Operator legal identity (§7.1) ────────────────────────────────────────
   /** Operator legal entity. Change this ONE value to rebrand the whole site. */
-  entityName: "BrightLink Connect",
+  entityName: "[Registered Business Name]",
   /** Operator wordmark used in the footer and legal pages. */
-  wordmark: "BrightLink Connect",
+  wordmark: "[Registered Business Name]",
   /** TODO: real registered business address */
   entityAddress: "[Registered Address, City, ST 00000]",
   /** TODO: real operator contact email */
-  entityEmail: "info@brightlinkconnect.com",
+  entityEmail: "[contact@yourdomain.com]",
   /** TODO: real canonical domain */
-  siteUrl: "https://www.brightlinkconnect.com",
+  siteUrl: "https://optimum-ten-chi.vercel.app",
 
   // ── Order line (§2) ───────────────────────────────────────────────────────
   /** TODO: real toll-free number, display format */
@@ -66,7 +66,7 @@ export const topDisclosure =
 
 /** §7.1 — reseller identity, used in footer + FAQ */
 export const retailerDisclosure =
-  `${site.entityName} is an independent authorized retailer of ${site.carrier}® services. ` +
+  `This site is operated by an independent authorized retailer of ${site.carrier}® services. ` +
   `We are not ${site.carrier}, and we are not affiliated with or endorsed by ${site.carrier} or ` +
   `${site.carrierLegal}. Orders placed through our order line are submitted to and fulfilled by ` +
   `${site.carrier}. All pricing, speeds, promotional terms and serviceability are set by ` +

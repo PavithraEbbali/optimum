@@ -83,11 +83,9 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={15} className="mt-0.5 shrink-0" aria-hidden="true" />
-                <span>
-                  {site.entityName}
-                  <br />
-                  {site.entityAddress}
-                </span>
+                {/* The operator is already named in the disclosure paragraph
+                    above, so this block carries the address only. */}
+                <span>{site.entityAddress}</span>
               </li>
             </ul>
           </div>
@@ -117,7 +115,7 @@ export default function Footer() {
           </p>
           <p className="text-xs leading-relaxed text-slate-500">{pricingDisclaimer}</p>
           <p className="pt-2 text-xs font-semibold text-slate-600">
-            © {year} {site.entityName} — Not {site.carrier}.
+            © {year} · Independent Authorized Retailer — Not {site.carrier}.
           </p>
         </div>
       </div>

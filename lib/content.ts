@@ -627,7 +627,7 @@ export const faqs: readonly Faq[] = [
   },
   {
     q: "Is this the official Optimum site?",
-    a: `No — ${site.entityName} is an independent authorized retailer of Optimum® services. This is not Optimum's website, and we are not affiliated with or endorsed by Optimum or ${site.carrierLegal}. Orders are submitted to and fulfilled by Optimum, and Optimum sets all pricing, speeds and promotional terms.`,
+    a: `No — this site is operated by an independent authorized retailer of Optimum® services. This is not Optimum's website, and we are not affiliated with or endorsed by Optimum or ${site.carrierLegal}. Orders are submitted to and fulfilled by Optimum, and Optimum sets all pricing, speeds and promotional terms.`,
   },
   {
     q: "How does the pricing work, and what fees should I expect?",
